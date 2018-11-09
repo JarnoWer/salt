@@ -119,4 +119,5 @@ $ git config --global user.email "jarno.wermundsen@myy.haaga-helia.fi"
 $ git config --global user.name "Jarno Wermundsen"
 $ git config --global credential.helper "cache --timeout=3600"
 $ ls -a
+```
 ![cloning works](img/Selection_011.png)
