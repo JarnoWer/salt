@@ -74,3 +74,19 @@ $ sudo salt-key -A
 ![minion config](img/Selection_004.png)
 
 ### Modulin tekeminen
+Klo 13:35
+
+Aloitin luomalla salt kansioon ssh kansion, jonne kopioin muokatun ssh asetustiedoston. Seuraavaksi tein top.sls tiedoston johon lisäsin kaikille minioneille asennettavaksi ssh modulin(kuva tiedostosta alla). Sitten tein saltin ssh-kansioon init.sls tiedoston, johon kirjasin asennettavaksi openssh-serverin ja kopioitavaksi ja vahdittavaksi asetus tiedoston(kuva tiedostosta alla).  
+```
+$ sudo mkdir ssh
+$ sudo cp /etc/ssh/sshd_config /srv/salt/ssh/
+$ sudoedit top.sls
+$ sudoedit ssh/init.sls
+```
+![minion config](img/Selection_005.png)
+![minion config](img/Selection_006.png)
+
+### Modulin testaaminen
+Klo 13:54
+
+
