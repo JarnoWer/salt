@@ -154,3 +154,15 @@ Tutkin heti aluksi internetistä löytyvästä Git manuaalista (https://git-scm.
 $ git blame -L 100,110 raporttih3.md
 ```
 ![git blame](img/Selection_014.png)
+
+# e) Tee tyhmä muutos gittiin, älä tee commit:tia. Tuhoa huonot muutokset ‘git reset –hard’. Huomaa, että tässä toiminnossa ei ole peruutusnappia.
+Tehtävänannon lähde mainittu raportin alussa.
+Klo 20:30
+
+Teen "tyhmän" muutoksen gittiin eli loin uuden tiedoston ja listasin näkymän kun tiedosto on kansiossa (Kuva alla). Sitten teen tehtävänannossa annetun komennon ja tarkistin taas kansion sisällön. Tiedosto jonka äsken loin tuhoutui odotetusti(Kuva alla).
+```
+$ sudoedit huono.md
+$ ls
+```
+![väärä tiedosto](img/Selection_015.png)
+![väärä tiedosto katosi](img/Selection_016.png)
