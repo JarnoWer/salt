@@ -21,9 +21,24 @@ $ sudo apt-get install shutter
 
 # C) Laita /srv/salt/ gittiin. Tee uusi moduli. Kloonaa varastosi toiselle koneelle (tai poista /srv/salt ja palauta se kloonaamalla) ja jatka sillä.
 Klo 11:26
-Olin jo tunnilla luonut GitHubiin "tyhjän" salt-repositoryn(kansion), joten en lähtenyt tällä kertaa poistamaan ja tekemään uudestaaan. Sen sijaan asensin koneeseen gitin ja kloonasin salt-kansion gitistä oman koneen /srv/-kansioon.
+Olin jo tunnilla luonut GitHubiin "tyhjän" salt-repositoryn (kansion), joten en lähtenyt tällä kertaa poistamaan ja tekemään uudestaaan. Sen sijaan asensin koneeseen gitin ja kloonasin salt-kansion gitistä oman koneen /srv/-kansioon.
 ```
 $ sudo apt-get install git
 $ cd /srv
 $ sudo git clone https://github.com/JarnoWer/salt
+```
+Seuraavaksi menin salt kansiioon ja annoin gitille käyttäjätietoni (sähköposti ja käyttäjänimi). Näiden toimien jälkeen loin raportille tämän tiedoston ja aloin harjoitella markdownin käyttöä kirjoittamalla raporttia ensimmäiseen kuvaan asti. Kuvan lisäyksen ohjeen löysin osoitteesta https://community.atlassian.com/t5/Bitbucket-questions/How-to-add-images-to-Readme-md/qaq-p/541434. Tallensin raportin ja suoritin git varaston päivitykset nähdäkseni toimiiko tekemäni markdown muotoilut. Muotoiluja piti muokkailla useaan kertaan, jotta sain muotoilut mieleisekseni hyvät ohjeet löytyivät sivulta https://en.support.wordpress.com/markdown-quick-reference/. Muotoiluja muokatessa suoritin git päivitykset useaan kertaan yhdistämällä kommennot, olisi varmaankin ollut hyvä poistaa virheelliset päivitykset git reset komennolla, mutta en vielä tässä vaiheessa ollut harjoitellut sitä. Lisäksi aika nopeasti kopioin Tero Karvisen ohjeesta (http://terokarvinen.com/2016/publish-your-project-with-github) komennon millä salasana kyselyn saa pidemmällä välillä. 
+ 
+```
+$ cd salt
+$ git config --global user.email "jarno.wermundsen@myy.haaga-helia.fi"
+$ git config --global user.name "Jarno Wermundsen"
+$ sudoedit raporttih3.md
+$ sudo git add .
+$ sudo git commit
+$ sudo git pull
+$ sudo git push
+$ sudoedit raporttih3.md
+$ sudo git add .; sudo git commit; sudo git pull; sudo git push
+$ git config --global credential.helper "cache --timeout=3600"
 ```
