@@ -21,6 +21,7 @@ $ sudo apt-get install shutter
 ```
 
 # C) Laita /srv/salt/ gittiin. Tee uusi moduli. Kloonaa varastosi toiselle koneelle (tai poista /srv/salt ja palauta se kloonaamalla) ja jatka sillä.
+Tehtävänannon lähde mainittu alussa. 
 Klo 11:26
 
 Olin jo tunnilla luonut GitHubiin "tyhjän" salt-repositoryn (kansion), joten en lähtenyt tällä kertaa poistamaan ja tekemään uudestaaan. Sen sijaan asensin koneeseen gitin ja kloonasin salt-kansion gitistä oman koneen /srv/-kansioon.
@@ -121,3 +122,24 @@ $ git config --global credential.helper "cache --timeout=3600"
 $ ls -a
 ```
 ![cloning works](img/Selection_011.png)
+
+#  d) Näytä omalla salt-varastollasi esimerkit komennoista ‘git log’, ‘git diff’ ja ‘git blame’. Selitä tulokset.
+Tehtävänannon lähde mainittu alussa.
+Klo 16:09
+
+Seuraavaksi kokeilen tehtävänannossa mainitut komennot ja selitän mitä tulokset tarkoittavat.
+
+## Git log
+
+Annoin komennon git log /srv/salt-kansiossa ja otin kuvan ylimmästä eli uusimmasta merkinnästä(kuva alla). "commit a2a349d3c23207a50f33e0fefbbd04d4180bb24d" ensimmäinen kohta commit on sillä kertaa tallenettujen muutosten tiiviste. Author: kertoo muutosten tekijän tiedot, jotka annettu --global user.-komennoilla. Date: Kertoo muutosten ajankohdan UTC aikana ja alla oleva teksti on käyttäjän syöttämä selitys muutoksille. 
+```
+$ git log
+```
+![git log](img/Selection_012.png)
+
+## Git diff
+
+Kokeilin taas antaa suoraan komennon, mutta tällä kertaa ei toiminut joten menin Git manuaalin internetsivulle (https://git-scm.com/docs/git-diff) tutkimaan komentoa. 
+```
+$ git diff
+
