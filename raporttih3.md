@@ -11,4 +11,11 @@ Alla kurssisivulla (http://terokarvinen.com/2018/aikataulu-%E2%80%93-palvelinten
 
 Tehtäviä suoritan Lenovo Thinkpad E570-kannettavalla, jossa käyttöjärjestelmänä käytän live tikulla pyörivää Linux Ubuntua(Ubuntu 18.04.1 LTS \n \l). Koneen sisältö "sudo lshw -short -sanitize" komenolla on seuraava:
 ![koneen sisältö](img/Selection_001.png)
+Alkutoimina suoritin koneessa komennot joilla näppäimistön saa tukemaan suomenkieltä, päivitin pakettivarastot ja asensin Shutterin kuvakaappauksia varten.
+'''
+$ setxkbmap fi
+$ sudo apt-get update
+$ sudo apt-get install shutter
+'''
+
  
