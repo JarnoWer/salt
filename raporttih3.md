@@ -139,7 +139,11 @@ $ git log
 
 ## Git diff
 
-Kokeilin taas antaa suoraan komennon, mutta tällä kertaa ei toiminut joten menin Git manuaalin internetsivulle (https://git-scm.com/docs/git-diff) tutkimaan komentoa. 
+Kokeilin taas antaa suoraan komennon, mutta tällä kertaa ei toiminut joten menin Git manuaalin internetsivulle (https://git-scm.com/docs/git-diff) tutkimaan komentoa. Selvisi, että voi syöttää esimerkiksi kaksi commit numeroa ja saa niiden välillä tapahtuneet muutokset. Selvitin äskeisessä lokimerkinnässä ja sitä edeletävän lokimerkinnän välillä tapahtuneet muutokset(kuva alla). "diff --git a/raporttih3.md b/raporttih3.md" on git diff otsikko, joka kertoo että eroja tarkastellaan näiden välillä. "index a54e324..c11028e 100644" 1000644 tässä kertoo, että kyseessä on tavallinen tiedosto eikä esim. symlinkki. "@@ -119,4 +119,5 @@" Kertoo mistä mihin tiedostossa on muutoksia <aloitusrivi>,<rivien määrä>. Lopussa on tekemääni tekstiä, jossa näkyy vihreällä lisätyt ja jos olisi poistettuja näkyisi punaisella. Nämä analysointitiedot suomensin täältä https://stackoverflow.com/questions/2529441/how-to-read-the-output-from-git-diff#.
+
 ```
 $ git diff
+$ git diff c3f6f8efccc1579cfeb2cefed4de9e33166aaee4 a2a349d3c23207a50f33e0fefbbd04d4180bb24d
+```
+![git diff](img/Selection_013.png)
 
