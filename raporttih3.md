@@ -175,6 +175,7 @@ Tällä kertaa teen hyvin yksinkertaisen modulin, joka asentaa kaksi ohjelmaa. L
 ```
 $ sudoedit top.sls 
 $ sudo mkdir start
+$ sudoedit start/init.sls 
 ```
 ![top.sls](img/Selection_017.png)
 ![init.sls](img/Selection_018.png)
@@ -189,7 +190,9 @@ $ echo " " |sudo tee /etc/salt/minion
 $ sudoedit /etc/salt/minion
 $ systemctl restart salt-minion.service 
 $ sudo apt-get purge shutter
-
+$ sudo salt '*' state.highstate
+$ sudoedit start/init.sls 
+$ sudo salt '*' state.highstate
 ```
 ![ei onnistu](img/Selection_019.png)
 ![init.sls](img/Selection_020.png)
