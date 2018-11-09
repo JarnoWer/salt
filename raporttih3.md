@@ -159,10 +159,25 @@ $ git blame -L 100,110 raporttih3.md
 Tehtävänannon lähde mainittu raportin alussa.
 Klo 20:30
 
-Teen "tyhmän" muutoksen gittiin eli loin uuden tiedoston ja listasin näkymän kun tiedosto on kansiossa (Kuva alla). Sitten teen tehtävänannossa annetun komennon ja tarkistin taas kansion sisällön. Tiedosto jonka äsken loin tuhoutui odotetusti(Kuva alla).
+Teen "tyhmän" muutoksen gittiin eli loin uuden tiedoston ja listasin näkymän kun tiedosto on kansiossa (Kuva alla). Sitten teen tehtävänannossa annetun komennon ja tarkistin taas kansion sisällön. Tiedosto jonka äsken loin tuhoutui odotetusti(Kuva alla). Raportin päivityksen yhteydessä huomasin, että myös raporttiin ottamani kuvakaappaus hävisi resetissä, mutta sain koneelta helposti takasin.
 ```
 $ sudoedit huono.md
 $ ls
 ```
 ![väärä tiedosto](img/Selection_015.png)
 ![väärä tiedosto katosi](img/Selection_016.png)
+
+# f) Tee uusi salt-moduli. Voit asentaa ja konfiguroida minkä vain uuden ohjelman: demonin, työpöytäohjelman tai komentokehotteesta toimivan ohjelman. Käytä tarvittaessa ‘find -printf “%T+ %p\n”|sort’ löytääksesi uudet asetustiedostot.
+Tehtävänannon lähde mainittu raportin alussa.
+Klo 20:52 eikun 21:32
+
+Tällä kertaa teen hyvin yksinkertaisen modulin, joka asentaa kaksi ohjelmaa. Lisäsin top.sls tiedostoon modulin asennettavaksi kaikille (kuva alla). Tein modulille oman kansion mikäli myöhemmin viritän lisää ja loin kansioon modulille init.sls tiedoston johon laitoin käskyn asentaa shutter ja git (kuva alla).
+```
+$ sudoedit top.sls 
+$ sudo mkdir start
+![top.sls](img/Selection_017.png)
+![init.sls](img/Selection_018.png)
+
+## Salt asennus ja modulin testaus
+Klo 22:18
+
