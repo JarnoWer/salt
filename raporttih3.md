@@ -101,5 +101,6 @@ $ ssh -p 9595 xubuntu@192.168.10.50
 ```
 ![ssh refuse and no config](img/Selection_008.png)
 ![highstate succeeded](img/Selection_009.png)
+![ssh warning and old key removing](img/Selection_011.png)
 ![ssh works again](img/Selection_010.png)
 
