@@ -175,9 +175,22 @@ Tällä kertaa teen hyvin yksinkertaisen modulin, joka asentaa kaksi ohjelmaa. L
 ```
 $ sudoedit top.sls 
 $ sudo mkdir start
+```
 ![top.sls](img/Selection_017.png)
 ![init.sls](img/Selection_018.png)
 
 ## Salt asennus ja modulin testaus
 Klo 22:18
 
+Asensin ensinmmäiseksi konelle salt minionin ja masterin, sitten muokasin minion asetustiedoston ja käynnistin salt-minionin uudelleen. Hyväksyin avainpyynnön ja poistin shutterin. Ajoin highstaten ja ensimmäisellä kertaa ei onnistunut (kuva alla). Muutin init.sls tiedostoa hieman (kuva alla) ja ajoin highstaten uudelleen jolloin näytti onnistuneen raportin (kuva alla). Shutterkin taas toimi ja sain kuvakaappaukset.
+```
+$ sudo apt-get install salt-minion salt-master 
+$ echo " " |sudo tee /etc/salt/minion
+$ sudoedit /etc/salt/minion
+$ systemctl restart salt-minion.service 
+$ sudo apt-get purge shutter
+
+```
+![ei onnistu](img/Selection_019.png)
+![init.sls](img/Selection_020.png)
+![onnistui](img/Selection_021.png)

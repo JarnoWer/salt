@@ -1,5 +1,6 @@
-pkg.installed:
-  - pkgs:
-    - shutter
-    - git
+ystart:
+  pkg.installed:
+    - pkgs:
+      - shutter
+      - git
 
