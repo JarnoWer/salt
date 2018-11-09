@@ -1,5 +1,6 @@
 # Palvelinten hallinta ict4tn022-3002 viikko 3
 Klo 7:42
+
 Alla kurssisivulla (http://terokarvinen.com/2018/aikataulu-%E2%80%93-palvelinten-hallinta-ict4tn022-3004-ti-ja-3002-to-%E2%80%93-loppukevat-2018-5p#h3) annetut harjoitus tehtävät, jotka suoritan tässä raportissa.
 >>	# H3
 >*	a) Opiskele yllä aikataulussa olevat artikkelit. Noissa artikkeleissa opetetaan ne asiat, joilla läksyt saa tehtyä. Tätä a-kohdan lukutehtävää ei tarvitse raportoida. Luettava materiaali on kunkin tapaamiskerran kohdalla.
@@ -21,6 +22,7 @@ $ sudo apt-get install shutter
 
 # C) Laita /srv/salt/ gittiin. Tee uusi moduli. Kloonaa varastosi toiselle koneelle (tai poista /srv/salt ja palauta se kloonaamalla) ja jatka sillä.
 Klo 11:26
+
 Olin jo tunnilla luonut GitHubiin "tyhjän" salt-repositoryn (kansion), joten en lähtenyt tällä kertaa poistamaan ja tekemään uudestaaan. Sen sijaan asensin koneeseen gitin ja kloonasin salt-kansion gitistä oman koneen /srv/-kansioon.
 ```
 $ sudo apt-get install git
@@ -43,9 +45,10 @@ $ sudo git add .; sudo git commit; sudo git pull; sudo git push
 $ git config --global credential.helper "cache --timeout=3600"
 ```
 
-## Tee uusi moduli
+## Tee uusi moduli (Ensi vaiheet)
 Klo 12:27
-Teen modulin, joka asentaa ssh-serverin ja vaihtaa käytettävän portin. Aloitan asentamalla konelle openssh-server ohjelman ja muokkaamalla sen config tiedostosta uudeksi yhteysportiksi 9595(kuva alla). Käynnistin ssh:n uudelleen, vaihdoin käyttäjän salasanan ja kokelin yhteydenottoa samalta koneelta samalle koneelle. Mikä onnistui(kuva alla).
+
+Teen modulin, joka asentaa ssh-serverin ja vaihtaa käytettävän portin. Aloitin asentamalla konelle openssh-server ohjelman ja muokkasin sen config tiedostosta uudeksi yhteysportiksi 9595(kuva alla). Käynnistin ssh:n uudelleen, vaihdoin käyttäjän salasanan ja kokelin yhteydenottoa samalta koneelta samalle koneelle. Mikä onnistui(kuva alla).
 ```
 $ sudo apt-get install openssh-server 
 $ sudoedit /etc/ssh/sshd_config 
@@ -57,4 +60,17 @@ $ ssh -p 9595 xubuntu@192.168.10.50
 ![ssh config tiedosto](img/Selection_002.png)
 ![Onnistunut ssh-yhteys](img/Selection_003.png)
 
+### Salt asennus
+Klo 13:10
 
+Taas kerran aloitetaan asentamalla salt. Tällä kertaa asensin masterin ja minionin samalle koneelle. Muokkasin minion asetustiedostosta koneelle masterin ja id:n(kuva alla). Käynnistin salt-minionin uudelleen ja hyväksyin avaimen. 
+```
+$ sudo apt-get install salt-minion salt-master
+$ echo " " |sudo tee /etc/salt/minion 
+$ sudoedit /etc/salt/minion
+$ sudo systemctl restart salt-minion.service 
+$ sudo salt-key -A
+```
+![minion config](img/Selection_004.png)
+
+### Modulin tekeminen
