@@ -89,4 +89,17 @@ $ sudoedit ssh/init.sls
 ### Modulin testaaminen
 Klo 13:54
 
+Testatakseni moduulia poistin openssh-serverin ensin kokonaan koneelta ja varmistin että yhteyttä ei saa muodostettua. Varmistin vielä, että sshd_config tiedostoa ei löydy koneen asetustiedostoista(kuva alla). Ajoin minionit highstateen, mikä näytti raportin mukaan onnistuvan(summary kuva alla). Testasin vielä, että ssh-yhteyden saa taas porttiin 9595, jolloin ilmeni että vanhan istunnon avain täytyy ensin poistaa(kuva alla). Poistin vanhan istunnon avaimen ja kokeilin vielä kerran jolloin yhteys toimi(kuva alla).
+```
+$ sudo apt-get purge openssh-server
+$ ssh -p 9595 xubuntu@192.168.10.50
+$ ls /etc/ssh/
+$ sudo salt '*' state.highstate
+$ ssh -p 9595 xubuntu@192.168.10.50
+$ ssh-keygen -f "/home/xubuntu/.ssh/known_hosts" -R "[192.168.10.50]:9595"
+$ ssh -p 9595 xubuntu@192.168.10.50
+```
+![ssh refuse and no config](img/Selection_008.png)
+![highstate succeeded](img/Selection_009.png)
+![ssh works again](img/Selection_010.png)
 
