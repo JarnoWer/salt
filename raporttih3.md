@@ -1,6 +1,6 @@
 # Palvelinten hallinta ict4tn022-3002 viikko 3
 Klo 7:42
-Alla kurssisivulla (http://terokarvinen.com/2018/aikataulu-%E2%80%93-palvelinten-hallinta-ict4tn022-3004-ti-ja-3002-to-%E2%80%93-loppukevat-2018-5p#h3) annetut harjoitus tehtävät.
+Alla kurssisivulla (http://terokarvinen.com/2018/aikataulu-%E2%80%93-palvelinten-hallinta-ict4tn022-3004-ti-ja-3002-to-%E2%80%93-loppukevat-2018-5p#h3) annetut harjoitus tehtävät, jotka suoritan tässä raportissa.
 >>	# H3
 >*	a) Opiskele yllä aikataulussa olevat artikkelit. Noissa artikkeleissa opetetaan ne asiat, joilla läksyt saa tehtyä. Tätä a-kohdan lukutehtävää ei tarvitse raportoida. Luettava materiaali on kunkin tapaamiskerran kohdalla.
 >*	b) MarkDown. Tee tämän tehtävän raportti MarkDownina. Helpointa on tehdä raportti samaan GitHub-varastoon kuin Salt-modulit. Tiedostoon .md-pääte. Tyhjä rivi tekee kappalejaon, risuaita ‘#’ tekee otsikon, sisennys merkitsee koodinpätkän.
@@ -11,6 +11,7 @@ Alla kurssisivulla (http://terokarvinen.com/2018/aikataulu-%E2%80%93-palvelinten
 
 Tehtäviä suoritan Lenovo Thinkpad E570-kannettavalla, jossa käyttöjärjestelmänä käytän live tikulla pyörivää Linux Ubuntua(Ubuntu 18.04.1 LTS \n \l). Koneen sisältö "sudo lshw -short -sanitize" komenolla on seuraava:
 ![koneen sisältö](img/Selection_001.png)
+
 Alkutoimina suoritin koneessa komennot joilla näppäimistön saa tukemaan suomenkieltä, päivitin pakettivarastot ja asensin Shutterin kuvakaappauksia varten.
 ```
 $ setxkbmap fi
@@ -18,4 +19,11 @@ $ sudo apt-get update
 $ sudo apt-get install shutter
 ```
 
- 
+# C) Laita /srv/salt/ gittiin. Tee uusi moduli. Kloonaa varastosi toiselle koneelle (tai poista /srv/salt ja palauta se kloonaamalla) ja jatka sillä.
+Klo 11:26
+Olin jo tunnilla luonut GitHubiin "tyhjän" salt-repositoryn(kansion), joten en lähtenyt tällä kertaa poistamaan ja tekemään uudestaaan. Sen sijaan asensin koneeseen gitin ja kloonasin salt-kansion gitistä oman koneen /srv/-kansioon.
+```
+$ sudo apt-get install git
+$ cd /srv
+$ sudo git clone https://github.com/JarnoWer/salt
+```
