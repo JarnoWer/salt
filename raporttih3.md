@@ -147,3 +147,10 @@ $ git diff c3f6f8efccc1579cfeb2cefed4de9e33166aaee4 a2a349d3c23207a50f33e0fefbbd
 ```
 ![git diff](img/Selection_013.png)
 
+## Git blame
+
+Tutkin heti aluksi internetistä löytyvästä Git manuaalista (https://git-scm.com/docs/git-blame), mitä komennolla tehdään. Komennolla voi esimerkiksi selvittää kuka millekin riville on tehnyt muutoksia ja koska. Katsoin raposrtistani rivit 100-110 ja laitoin järjestykseen alusta loppuun (kuva alla). "edffeca8" on commit ensimmäiset merkit selvitin katsomalla vastaavan ajan logimerkinnän, kun epäilin liittyvän commit numeroon. Seuraava suluissa oleva teksti onkin hyvin ilmeinen eli muokkaaja, päiväys, kellonaika, aikavyöhyke ja rivinumero. Sulkujen jälkeinen on raportin teksti ko. rivillä. 
+```
+$ git blame -L 100,110 raporttih3.md
+```
+![git blame](img/Selection_014.png)
