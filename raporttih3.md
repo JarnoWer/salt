@@ -42,3 +42,19 @@ $ sudoedit raporttih3.md
 $ sudo git add .; sudo git commit; sudo git pull; sudo git push
 $ git config --global credential.helper "cache --timeout=3600"
 ```
+
+## Tee uusi moduli
+Klo 12:27
+Teen modulin, joka asentaa ssh-serverin ja vaihtaa käytettävän portin. Aloitan asentamalla konelle openssh-server ohjelman ja muokkaamalla sen config tiedostosta uudeksi yhteysportiksi 9595(kuva alla). Käynnistin ssh:n uudelleen, vaihdoin käyttäjän salasanan ja kokelin yhteydenottoa samalta koneelta samalle koneelle. Mikä onnistui(kuva alla).
+```
+$ sudo apt-get install openssh-server 
+$ sudoedit /etc/ssh/sshd_config 
+$ sudo service ssh restart
+$ hostname -I
+$ passwd
+$ ssh -p 9595 xubuntu@192.168.10.50 
+```
+![ssh config tiedosto](img/Selection_002.png)
+![Onnistunut ssh-yhteys](img/Selection_003.png)
+
+
