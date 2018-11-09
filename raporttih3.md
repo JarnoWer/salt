@@ -104,3 +104,19 @@ $ ssh -p 9595 xubuntu@192.168.10.50
 ![ssh warning and old key removing](img/Selection_011.png)
 ![ssh works again](img/Selection_010.png)
 
+## Kloonaa varastosi toiselle koneelle
+Klo 15:37
+
+Lyhyen tauon jälkeen käynnistin saman kannettavan uudestaan samalla livetikulla, jolloin kaikki äsken koneelle tekemäni muutokset hävisivät. Suoritin käynnistyksen jälkeen komennot, että sain näppäimistön suomeksi, tiedostopaketit päivitettyä, asennettua shutterin ja gitin. Sitten menin /srv-kansioon, johon kloonasin GitHubin salt-kansioni. Syötin gitille tietoni ja vähensin salasanakyselyitä. Lopuksi vielä tarkistin, että kansiossa tiedostot(kuva alla).
+```
+$ setxkbmap fi
+$ sudo apt-get update 
+$ sudo apt-get install shutter
+$ sudo apt-get install git
+$ cd /srv
+$ sudo git clone https://github.com/JarnoWer/salt
+$ git config --global user.email "jarno.wermundsen@myy.haaga-helia.fi"
+$ git config --global user.name "Jarno Wermundsen"
+$ git config --global credential.helper "cache --timeout=3600"
+$ ls -a
+![cloning works](img/Selection_011.png)
